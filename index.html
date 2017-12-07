@@ -19,7 +19,7 @@
         position: relative;
         z-index: 1;
         -webkit-perspective: 3000px;
-        perspective: 3000px;
+        perspective: 2000px;
         width: 1220px;
         margin: auto;
         margin-top: 30px;
@@ -30,14 +30,16 @@
         height: 500px;
         -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
-        -webkit-transform: translateZ(0);
+        -webkit-transform: translateZ(0px);
         transform: translateZ(0);
         transition: -webkit-transform .3s cubic-bezier(.25,.46,.45,.94);
-        transition: transform .3s cubic-bezier(.25,.46,.45,.94);
-        transition: transform .3s cubic-bezier(.25,.46,.45,.94),-webkit-transform .3s cubic-bezier(.25,.46,.45,.94);
+        transition: all .3s cubic-bezier(.25,.46,.45,.94);
+        transition: all .3s cubic-bezier(.25,.46,.45,.94),-webkit-transform .3s cubic-bezier(.25,.46,.45,.94);
     }
     .banner_3d_list{
         display: block;
+        transition: all .3s ease;
+        /* transform: rotateX(3deg) rotateY(3deg); */
     }
     .banner_bg{
         background-repeat: no-repeat;
@@ -70,12 +72,29 @@
         width: 100%;
         top: -27px;
     }
+    .shadow{
+        background-image: url(static/img/shadow.png);
+        display: none;
+        height: 620px;
+        position: absolute;
+        top: -60px;
+        bottom: -60px;
+        left: -60px;
+        right: -60px;
+        opacity: 0;
+        transition: opacity .3s;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        pointer-events: none;
+    }
 </style>
 </head>
+<body>
     <div class="container">
         <div class="barContainer">
             <ul class="banner_3d">
                 <li class="banner_3d_list">
+                    <div class="shadow"></div>
                     <div class="banner_bg">
                         <img src="static/img/nm1.png" alt="">
                     </div>
@@ -85,7 +104,84 @@
                 </li>
             </ul>
         </div>
+        <div class="showS">
+            <span class="clientX"></span>
+            <span class="clientY"></span>
+        </div>
     </div>
-<body>
 </body>
+<script>
+    $(document).ready(function(){
+        var tooltip = $("#tooltip");//获取显示层
+
+        var toolContent = $("#toolContent");//获取显示内容层
+
+        $('.banner_3d').bind('mouseenter',function(e){//查找a对象，并给对象创建onmouseover事件--这里可以替换成其他的如：div($('div').bind())，ul下的 li $('ul > li').bind()
+            mouseIn();
+            // Mouse(e);//计算显示层的位置
+            // toolContent.html("<li>显示内容</li>");//显示内容--PS:自己改成动态获取
+            // tooltip.css({ top: toppos ,left: leftpos  });//给显示层定义CSS--当前计算出的位置
+            // tooltip.stopAll().pause(300).fadeTo(200,1);//显示效果
+        }).bind('mousemove',function(e){//给对象创建mousemove事件
+            Mouse(e);//计算显示层的位置
+            MouseEvent(e);
+            // tooltip.css({ top: toppos ,left: leftpos  });//给显示层定义CSS--当前计算出的位置--随时改变位置
+        }).bind('mouseout',function(){//给对象创建mouseout事件
+            // tooltip.stopAll().fadeTo(500,0, function(){$(this).hide();});//隐藏效果
+            mouseOut();
+        });
+    });
+    //计算坐标函数
+    var Mouse = function(e){
+        var contentBox_x = $('.clientX');
+        var contentBox_y = $('.clientY');
+        // console.log(contentBox_x);
+        // mouse = new MouseEvent(e);
+        leftpos = e.offsetX
+        toppos = e.offsetY;
+        contentBox_x.text(leftpos);
+        contentBox_y.text(toppos);
+    }
+    //获取鼠标坐标函数
+    // rotateX: +— 8    routateY：+-2.6deg
+    var MouseEvent = function(e) {
+        var off_x = e.offsetX;
+        var off_y = e.offsetY;
+        // calculate the timely style changes
+        var axis_x = $('.banner_3d_list').width()/2;
+        var axis_y = (561/2) + 24;
+        animX = (((off_x - axis_x) / axis_x) * 8) + 'deg';
+        animY = (((axis_y - off_y) / axis_y) * 6.6) + 'deg';
+        console.log(animX, ',', animY);
+        $('.banner_3d').css("transform", "translateZ(20px)");
+        // console.log(container_z);
+        // $('.banner_3d').css(rotateX:''+animX, rotateY:''+animY);
+        $('.banner_3d_list').css("transform", "rotateX("+animY+") rotateY("+animX+")");
+        // $('.banner_3d_list').css("color","red");
+        // $('.banner_3d_list').css('rotateY', animY);
+        // shadow: input1 : +- 45(right shadow)  input2: +- 20(bottom shadow)
+        shadowX = (((off_x - axis_x) / axis_x) * -45) + 'px';
+        shadowY = (((axis_y - off_y) / axis_y) * 20) + 'px';
+        $('.shadow').css("transform", "translate3d("+shadowX+","+shadowY+",0)");
+    }
+    var mouseOut = function() {
+        // $('.banner_3d_list').css("color","blue");
+        $('.banner_3d_list').css("transition", "all .3s ease-in-out");
+        setTimeout(() => {
+            $('.banner_3d_list').css("transform", "rotateX(0deg) rotateY(0deg)");
+            $('.banner_3d').css("transform", "translateZ(0px)");
+            $('.shadow').css("transform", "translate3d(0,0,0)");
+            $('.shadow').css("display", "none");
+            $('.shadow').css("opacity", "0");
+        }, 100);
+    }
+    var mouseIn = function() {
+        $('.banner_3d_list').css("transition", "transform 0.3s ease 0");
+        setTimeout(() => {
+            $('.banner_3d_list').css("transition", "transform 0s");
+            $('.shadow').css("display", "block");
+            $('.shadow').css("opacity", "1");
+        }, 300);
+    }
+</script>
 </html>
