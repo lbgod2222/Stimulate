@@ -1,187 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>TEST FOR REACTIVE BAR</title>
-<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    .container{
-        background-color: rgb(237, 237, 237);
-        width: 100vw;
-        height: 100vh;
-        border: 1px solid red;
-    }
-    .barContainer{
-        position: relative;
-        z-index: 1;
-        -webkit-perspective: 3000px;
-        perspective: 2000px;
-        width: 1220px;
-        margin: auto;
-        margin-top: 30px;
-        border: 1px solid violet;
-    }
-    .banner_3d{
-        position: relative;
-        height: 500px;
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transform: translateZ(0px);
-        transform: translateZ(0);
-        transition: -webkit-transform .3s cubic-bezier(.25,.46,.45,.94);
-        transition: all .3s cubic-bezier(.25,.46,.45,.94);
-        transition: all .3s cubic-bezier(.25,.46,.45,.94),-webkit-transform .3s cubic-bezier(.25,.46,.45,.94);
-    }
-    .banner_3d_list{
-        display: block;
-        transition: all .3s ease;
-        /* transform: rotateX(3deg) rotateY(3deg); */
-    }
-    .banner_bg{
-        background-repeat: no-repeat;
-        background-position: 50%;
-        background-size: contain;
-    }
-    .banner_bg img{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        border-radius: 10px;
-        width: 100%;
-        top: -27px;
-    }
-    .banner_content{
-        transition: transform 0.3s ease-in-out;
-        background-repeat: no-repeat;
-        background-position: 50%;
-        background-size: contain;
-    }
-    .banner_content img{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        border-radius: 10px;
-        width: 100%;
-        top: -27px;
-    }
-    .shadow{
-        background-image: url(static/img/shadow.png);
-        display: none;
-        height: 620px;
-        position: absolute;
-        top: -60px;
-        bottom: -60px;
-        left: -60px;
-        right: -60px;
-        opacity: 0;
-        transition: opacity .3s;
-        background-repeat: no-repeat;
-        background-position: center 0;
-        pointer-events: none;
-    }
-</style>
-</head>
-<body>
-    <div class="container">
-        <div class="barContainer">
-            <ul class="banner_3d">
-                <li class="banner_3d_list">
-                    <div class="shadow"></div>
-                    <div class="banner_bg">
-                        <img src="static/img/nm1.png" alt="">
+    <head>
+        <title>孔明屋-Koumei</title>
+        <meta charset="UTF-8" name="keywords" content="阿希,Asch,孔明,孔明屋,预测市场,augur,区块链,智能合约,区块链应用,侧链,区块链开发,区块链js开发">
+        <meta name="description" content="孔明屋是基于阿希链开发的去中心化应用，用于预测市场以及趋势/意志/逻辑/经验统筹，具有一定的科学意义">
+        <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    </head>
+    <body>
+        <div id="prime">
+            <div id="header">
+                <div class="header_logo">
+                </div>
+                <ul class="header_list">
+                    <li class="header_list_active"><a href="#home">HOME</a></li>
+                    <li><a href="#feature">FEATURE</a></li>
+                    <li><a href="#vision">VISION</a></li>
+                    <li><a href="#usage">USAGE</a></li>
+                    <li><a href="#team">TEAM</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <div class="interact">
+                    <div class="download">
+                        <span>Download</span>
                     </div>
-                    <div class="banner_content">
-                        <img src="static/img/pro222.png" alt="">
+                    <div class="i18n_btn">
+                        <span>
+                            <i>CN</i>
+                            <img src="static/img/i18n_btn.png" alt="">
+                        </span>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-        <div class="showS">
-            <span class="clientX"></span>
-            <span class="clientY"></span>
+        <div id="mainPage">
+            <div class="mainPage_content">
+                <div class="mainPage_content_layer1"></div>
+                <div class="mainPage_content_layer2"></div>
+                <span>A TRUSTABLE PLATFROM</span>
+            </div>
+            <div class="mainPage_transitionBar">
+                <div class="mainPage_transitionBar_inner">
+                    <div class="mainPage_transitionBar_spot1">
+                        <img src="static/img/mainPage_transitionBar_1.png" alt="">
+                        <span>TRUSTABLE</span>
+                    </div>
+                    <div class="mainPage_transitionBar_spot2">
+                            <img src="static/img/mainPage_transitionBar_2.png" alt="">
+                            <span>AUTONOMY</span>
+                    </div>
+                    <div class="mainPage_transitionBar_spot3">
+                            <img src="static/img/mainPage_transitionBar_3.png" alt="">
+                            <span>EXTENTABLE</span>
+                    </div>
+                    <div class="mainPage_transitionBar_spot4">
+                            <img src="static/img/mainPage_transitionBar_4.png" alt="">
+                            <span>DECENTRALLIZE</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</body>
-<script>
-    $(document).ready(function(){
-        var tooltip = $("#tooltip");//获取显示层
-
-        var toolContent = $("#toolContent");//获取显示内容层
-
-        $('.banner_3d').bind('mouseenter',function(e){//查找a对象，并给对象创建onmouseover事件--这里可以替换成其他的如：div($('div').bind())，ul下的 li $('ul > li').bind()
-            mouseIn();
-            // Mouse(e);//计算显示层的位置
-            // toolContent.html("<li>显示内容</li>");//显示内容--PS:自己改成动态获取
-            // tooltip.css({ top: toppos ,left: leftpos  });//给显示层定义CSS--当前计算出的位置
-            // tooltip.stopAll().pause(300).fadeTo(200,1);//显示效果
-        }).bind('mousemove',function(e){//给对象创建mousemove事件
-            Mouse(e);//计算显示层的位置
-            MouseEvent(e);
-            // tooltip.css({ top: toppos ,left: leftpos  });//给显示层定义CSS--当前计算出的位置--随时改变位置
-        }).bind('mouseout',function(){//给对象创建mouseout事件
-            // tooltip.stopAll().fadeTo(500,0, function(){$(this).hide();});//隐藏效果
-            mouseOut();
-        });
-    });
-    //计算坐标函数
-    var Mouse = function(e){
-        var contentBox_x = $('.clientX');
-        var contentBox_y = $('.clientY');
-        // console.log(contentBox_x);
-        // mouse = new MouseEvent(e);
-        leftpos = e.offsetX
-        toppos = e.offsetY;
-        contentBox_x.text(leftpos);
-        contentBox_y.text(toppos);
-    }
-    //获取鼠标坐标函数
-    // rotateX: +— 8    routateY：+-2.6deg
-    var MouseEvent = function(e) {
-        var off_x = e.offsetX;
-        var off_y = e.offsetY;
-        // calculate the timely style changes
-        var axis_x = $('.banner_3d_list').width()/2;
-        var axis_y = (561/2) + 24;
-        animX = (((off_x - axis_x) / axis_x) * 8) + 'deg';
-        animY = (((axis_y - off_y) / axis_y) * 6.6) + 'deg';
-        console.log(animX, ',', animY);
-        $('.banner_3d').css("transform", "translateZ(20px)");
-        // console.log(container_z);
-        // $('.banner_3d').css(rotateX:''+animX, rotateY:''+animY);
-        $('.banner_3d_list').css("transform", "rotateX("+animY+") rotateY("+animX+")");
-        // $('.banner_3d_list').css("color","red");
-        // $('.banner_3d_list').css('rotateY', animY);
-        // shadow: input1 : +- 45(right shadow)  input2: +- 20(bottom shadow)
-        shadowX = (((off_x - axis_x) / axis_x) * -45) + 'px';
-        shadowY = (((axis_y - off_y) / axis_y) * 20) + 'px';
-        $('.shadow').css("transform", "translate3d("+shadowX+","+shadowY+",0)");
-    }
-    var mouseOut = function() {
-        // $('.banner_3d_list').css("color","blue");
-        $('.banner_3d_list').css("transition", "all .3s ease-in-out");
-        setTimeout(() => {
-            $('.banner_3d_list').css("transform", "rotateX(0deg) rotateY(0deg)");
-            $('.banner_3d').css("transform", "translateZ(0px)");
-            $('.shadow').css("transform", "translate3d(0,0,0)");
-            $('.shadow').css("display", "none");
-            $('.shadow').css("opacity", "0");
-        }, 100);
-    }
-    var mouseIn = function() {
-        $('.banner_3d_list').css("transition", "transform 0.3s ease 0");
-        setTimeout(() => {
-            $('.banner_3d_list').css("transition", "transform 0s");
-            $('.shadow').css("display", "block");
-            $('.shadow').css("opacity", "1");
-        }, 300);
-    }
-</script>
+        <div id="featurePage">
+            <div class="featurePage_upper">
+                <span class="featurePage_upper_title">
+                    <img src="static/img/title_pic.png" alt="">
+                    <b>Feature Of Our Product</b>
+                </span>
+                <span class="featurePage_upper_detail">
+                    A Trusted, autonomous and extensible decentralization prediction platfrom
+                </span>
+            </div>
+            <div class="ferturePage_bottom"></div>
+        </div>
+        <div id="visionPage">
+            <div class="visionPage_content">
+                <div class="visionPage_content_upper">
+                    <span class="visionPage_upper_title">
+                        <img src="static/img/title_pic.png" alt="">
+                        <b>VISION</b>
+                    </span>
+                    <span class="visionPage_upper_detail">
+                        A Trusted, autonomous and extensible decentralization prediction platfrom
+                    </span>
+                    <span class="visionPage_upper_decor"></span>
+                </div>
+                <div class="visionPage_content_bottom">
+                    <div class="visionPage_leftbottom">
+                        <p>KOUMEI COTTAGE为一个公正的分布式信任中介。KOUMEI COTTAGE就是为了建立一个可信/自治/可拓展的预测市场。区块链信息透明，不可篡改的特性与KOUMEI COTTAGE完美结合，加上区块链的天然特性让其的运行接近零成本，智能合约的实现更能让区块链拥有可编程动态决定结果的计算能力</p>
+                        <span class="visionPage_leftbottom_btn">下载白皮书</span>
+                    </div>
+                    <div class="visionPage_rightbottom">
+                        <!-- <img src="static/img/" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="applyPage">
+            <div class="applyPage_upper">
+                <span class="applyPage_upper_title">
+                    <img src="static/img/title_pic.png" alt="">
+                    <b>Examples for apply</b>
+                </span>
+                <span class="applyPage_upper_detail">
+                    A Trusted, autonomous and extensible decentralization prediction platfrom
+                </span>
+            </div>
+            <div class="applyPage_bottom"></div>
+        </div>
+    </body>
+    <script>
+    </script>
 </html>
