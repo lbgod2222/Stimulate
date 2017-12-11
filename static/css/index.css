@@ -2,8 +2,6 @@
     position: fixed;
     width: 100%;
     z-index: 2;
-    /* border: 1px solid cadetblue; */
-    /* background-color: rgb(25, 44, 100) */
 }
 #header{
     font-size: 14px;
@@ -69,11 +67,12 @@
 .i18n_btn img{
     position: absolute;
     right: -2px;
-    top: 1.2px;
+    top: 0.2px;
 }
 #mainPage{
     position: relative;
-    border: 1px solid firebrick;
+    border: 1px solid transparent;
+    /* overflow: hidden; */
     width: 100%;
     height: 100vh;
     background: linear-gradient(to bottom, rgb(25,44,102), rgb(18, 110, 151));
@@ -91,7 +90,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/mainPage_layer_2.png') no-repeat center;
+    background: url('../img/mainPage_layer_2.png') no-repeat;
+    background-size: contain;
 }
 .mainPage_content .mainPage_content_layer2{
     position: absolute;
@@ -99,7 +99,17 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/mainPage_layer_1.png') no-repeat center;
+    background: url('../img/mainPage_layer_1.png') no-repeat;
+    background-size: contain;
+}
+.mainPage_content .mainPage_content_layer3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/mainPage_cloud.png') no-repeat;
+    background-size: contain;
 }
 .mainPage_content span{
     position: absolute;
@@ -168,6 +178,24 @@
 }
 .featurePage_upper_detail{
     margin-top: 10px;
+}
+.featurePage_bottom{
+    margin-top: 15px;
+}
+.featurePage_bg1{
+    padding-top: 15px;
+    width: 1190px;
+    height: 580px;
+    margin: auto;
+    background: url('../img/featurePage_bg1.png') no-repeat;
+    background-size: contain; 
+}
+.featurePage_bg2{
+    margin: auto;
+    width: 1040px;
+    height: 600px;
+    background: url('../img/featurePage_bg2.png') no-repeat;
+    background-size: contain;
 }
 #visionPage{
     width: 100%;
@@ -264,4 +292,123 @@
     font-size: 32px;
     font-weight: 400;
     margin-left: 20px;
+}
+.applyPage_bottom{
+    margin-top: 40px;
+}
+.applyPage_list_container{
+    display: flex;
+    flex-direction: row;
+    /* align-content: center; */
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+    /* height: 400px; */
+    /* line-height: 400px; */
+    /* border: 1px solid rgb(133, 96, 170); */
+    /* background-color: darksalmon; */
+}
+.applyPage_item{
+    width: 355px;
+    height: 400px;
+    box-sizing: border-box;
+    padding: 65px 40px;
+    background: url('../img/applyPage_bg.png') no-repeat;
+    background-size: contain;
+}
+.applyPage_item_title{
+    position: relative;
+}
+.applyPage_item_title b{
+    font-size: 18px;
+    font-weight: 200;
+    display: block;
+}
+.applyPage_item_decor{
+    position: absolute;
+    margin-top: 6px;
+    display: inline-block;
+    width: 40px;
+    border: 1px solid rgb(231, 231, 231);
+}
+.applyPage_item_content{
+    margin-top: 40px;
+    font-size: 10px;
+    line-height: 20px;
+}
+/* 形象分级 */
+.applyPage_active{
+    height: 440px !important;
+    width: 395px !important;
+    /* height: 0px !important; */
+    z-index: 7;
+}
+.applyPage_l1_right{
+    height: 410px !important;
+    width: 365px !important;
+    margin-left: -130px;
+    z-index: 6;
+}
+.applyPage_l2_right{
+    height: 380px !important;
+    width: 335px !important;
+    margin-left: -130px;
+    z-index: 5;
+}
+.applyPage_l3_right{
+    height: 350px !important;
+    width: 305px !important;
+    margin-left: -130px;
+    z-index: 4;
+}
+.applyPage_l4_right{
+    height: 320px !important;
+    width: 275px !important;
+    margin-left: -130px;
+    z-index: 3;
+}
+.applyPage_l5_right{
+    height: 290px !important;
+    width: 245px !important;
+    margin-left: -130px;
+    z-index: 2;
+}
+.applyPage_l1_left{
+    height: 410px !important;
+    width: 365px !important;
+    margin-right: -130px;
+    z-index: 6;
+}
+.applyPage_l2_left{
+    height: 380px !important;
+    width: 335px !important;
+    margin-right: -130px;
+    z-index: 5;
+}
+.applyPage_l3_left{
+    height: 350px !important;
+    width: 305px !important;
+    margin-right: -130px;
+    z-index: 4;
+}
+.applyPage_l4_left{
+    height: 320px !important;
+    width: 275px !important;
+    margin-right: -130px;
+    z-index: 3;
+}
+.applyPage_l5_left{
+    height: 290px !important;
+    width: 245px !important;
+    margin-right: -130px;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1400px) {
+    .mainPage_content{
+        position: relative;
+        width: 548px;
+        height: 485px;
+        margin: 120px auto 0px;
+    }
 }
