@@ -107,9 +107,9 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    background: url('../img/mainPage_cloud.png') no-repeat;
-    background-size: contain;
+    height: 75%;
+    background: url('../img/mainPage_cloud.png') no-repeat center;
+    /* background-size: contain; */
 }
 .mainPage_content span{
     position: absolute;
@@ -402,6 +402,189 @@
     width: 245px !important;
     margin-right: -130px;
     z-index: 2;
+}
+#teamPage{
+    background-color: rgb(248, 248, 250);
+    position: relative;
+    overflow: hidden;
+}
+.teamPage_container{
+    position: relative;
+    margin: 200px auto 150px auto;
+    width: 1170px;
+    height: 800px;
+    border: 1px solid transparent;
+    /* overflow: hidden; */
+    background-color: #FFF;
+}
+.teamPage_idea{
+    position: absolute;
+    width: 166px;
+    height: 127px;
+    right: 28.5%;
+    background: url('../img/teamPage_idea.png') no-repeat;
+}
+.teamPage_upper_title{
+    margin-top: 100px;
+}
+.teamPage_upper_title img{
+    display: inline-block;
+}
+.teamPage_upper_title b{
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    vertical-align: text-bottom;
+    font-size: 32px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.teamPage_container_upper span{
+    display: block;
+    text-align: center;
+}
+.teamPage_bg1{
+    position: absolute;
+    top: -110px;
+    width: 656px;
+    height: 656px;
+    left: 50%;
+    margin-left: -328px;
+    background: url('../img/teamPage_circle_sm.png') no-repeat;
+}
+.teamPage_bg2{
+    position: absolute;
+    top: -165px;
+    width: 768px;
+    height: 768px;
+    left: 50%;
+    margin-left: -384px;
+    background: url('../img/teamPage_circle_bg.png') no-repeat;
+}
+.teamPage_footer{
+    position: absolute;
+    bottom: 0;
+    width: 1170px;
+    height: 290px;
+    background: url('../img/teamPage_footer.png') no-repeat;
+}
+.teamPage_footer_arror{
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 10px;
+    left: 50%;
+    margin-left: -6px;
+    background: url('../img/teamPage_arror.png');
+}
+#adPage{
+    width: 100%;
+    height: 280px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.adPage_container{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin: auto;
+    height: 150px;
+    width: 1190px;
+    margin-top: 65px;
+}
+.adPage_arror_left{
+    position: absolute;
+    left: -15px;
+    display: inline-block;
+    height: 150px;
+    width: 22px;
+    background: url('../img/adPage_arror.png') no-repeat center;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+.adPage_arror_right{
+    position: absolute;
+    right: -15px;
+    display: inline-block;
+    height: 150px;
+    width: 22px;
+    background: url('../img/adPage_arror.png') no-repeat center;
+    cursor: pointer;
+}
+.adPage_lsit{
+    width: 285px;
+    height: 150px;
+    background: url('../img/adPage_bg.png') no-repeat;
+}
+#footerPage{
+    overflow: hidden;
+    width: 100%;
+    height: 285px;
+    background: url('../img/footerPage_bg.png') no-repeat;
+}
+.footerPage_container{
+    position: relative;
+    width: 1190px;
+    height: 170px;
+    margin: auto;
+    margin-top: 60px;
+}
+.footerPage_com{
+    width: 270px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+.footerPage_container a{
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
+.footerPage_wechat{
+    background: url('../img/wechat.png') no-repeat center;
+}
+.footerPage_email{
+    background: url('../img/email.png') no-repeat center;
+}
+.footerPage_github{
+    background: url('../img/github.png') no-repeat center;
+}
+.footerPage_qicq{
+    background: url('../img/qicq.png') no-repeat center;
+}
+.footerPage_weibo{
+    background: url('../img/weibo.png') no-repeat center;
+}
+.footerPage_btn{
+    margin-top: 65px;
+    text-align: center;
+}
+.footerPage_btn span{
+    display: inline-block;
+    width: 170px;
+    line-height: 45px;
+    color: #fff;
+    height: 45px;
+    border-radius: 24px;
+    font-size: 24px;
+}
+.footerPage_download{
+    background-color: rgb(70, 223, 205);
+}
+.footerPage_contact{
+    margin-left: 20px;
+    border: 1px solid rgb(172, 250, 234);
+    background-color: rgba(70, 223, 205, .5)
+}
+.footerPage_icon{
+    position: absolute;
+    width: 89px;
+    right: 0;
+    top: 0;
+    height: 170px;
+    background: url('../img/footerPage_icon.png') no-repeat center;
 }
 
 @media screen and (max-width: 1400px) {
