@@ -1,0 +1,23 @@
+{
+  "name": "stimulate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"browser-sync start --server --files \"static/css/*.css, **/*.html, **/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbgod2222/Stimulate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbgod2222/Stimulate/issues"
+  },
+  "homepage": "https://github.com/lbgod2222/Stimulate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
