@@ -221,6 +221,7 @@ body{
     margin: auto;
     background: url('../img/featurePage_bg1.png') no-repeat;
     background-size: contain; 
+    perspective: 2000px;
 }
 .featurePage_shadow{
     background: url(../img/shadow.png) no-repeat center;
@@ -234,11 +235,15 @@ body{
     pointer-events: none;
 }
 .featurePage_bg2{
+    position: relative;
     margin: auto;
     width: 1040px;
     height: 600px;
     background: url('../img/featurePage_bg2.png') no-repeat;
     background-size: contain;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all .3s cubic-bezier(.25,.46,.45,.94);
 }
 .featurePage_innerContain{
     display: flex;
