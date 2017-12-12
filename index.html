@@ -6,21 +6,23 @@
         <meta name="description" content="孔明屋是基于阿希链开发的去中心化应用，用于预测市场以及趋势/意志/逻辑/经验统筹，具有一定的科学意义">
         <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+        <script src="static/js/index.js"></script>
         <link rel="stylesheet" type="text/css" href="static/css/reset.css">
         <link rel="stylesheet" type="text/css" href="static/css/index.css">
     </head>
     <body>
-        <div id="prime">
+        <div id="prime" class="">
             <div id="header">
                 <div class="header_logo">
                 </div>
                 <ul class="header_list">
-                    <li class="header_list_active"><a href="#home">HOME</a></li>
-                    <li><a href="#feature">FEATURE</a></li>
-                    <li><a href="#vision">VISION</a></li>
-                    <li><a href="#usage">USAGE</a></li>
-                    <li><a href="#team">TEAM</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li class="header_list_active"><a href="#mainPage">HOME</a></li>
+                    <li><a href="#featurePage">FEATURE</a></li>
+                    <li><a href="#visionPage">VISION</a></li>
+                    <li><a href="#applyPage">APPLY</a></li>
+                    <li><a href="#teamPage">TEAM</a></li>
+                    <li><a href="#footerPage">CONTACT</a></li>
                 </ul>
                 <div class="interact">
                     <div class="download">
@@ -36,10 +38,11 @@
             </div>
         </div>
         <div id="mainPage">
+            <br clear="both">
             <div class="mainPage_content">
-                <div class="mainPage_content_layer1"></div>
-                <div class="mainPage_content_layer2"></div>
-                <div class="mainPage_content_layer3"></div>
+                <div class="mainPage_content_layer1 disappear"></div>
+                <div class="mainPage_content_layer2 disappear"></div>
+                <div class="mainPage_content_layer3 disappear"></div>
                 <span>A TRUSTABLE PLATFROM</span>
             </div>
             <div class="mainPage_transitionBar">
@@ -75,7 +78,40 @@
             </div>
             <div class="featurePage_bottom">
                 <div class="featurePage_bg1">
+                    <!-- <div class="featurePage_shadow"></div> -->
                     <div class="featurePage_bg2">
+                        <div class="featurePage_innerContain">
+                            <div class="featurePage_item">
+                                <img src="static/img/featurePage_transparent.png" alt="">
+                                <b>信息透明</b>
+                                <span>可信、自治、可拓展、不可篡改的预测市场</span>
+                            </div>
+                            <div class="featurePage_item">
+                                <img src="static/img/featurePage_cost.png" alt="">
+                                <b>成本低廉</b>
+                                <span>区块链的天然特性让运行近乎为零成本</span>
+                            </div>
+                            <div class="featurePage_item">
+                                <img src="static/img/featurePage_decentralize.png" alt="">
+                                <b>去中心化</b>
+                                <span>有开源、自治、分布式存储<br>公开透明、代币激励等特性</span>
+                            </div>
+                            <div class="featurePage_item featurePage_item_down">
+                                <img src="static/img/featurePage_state.png" alt="">
+                                <b>数据独立</b>
+                                <span>数据存储在独立的区块链中<br>不是与其他应用共享一个链或一套账本<br>不附属于其他区块系统</span>
+                            </div>
+                            <div class="featurePage_item featurePage_item_down">
+                                <img src="static/img/featurePage_circle.png" alt="">
+                                <b>模式创新</b>
+                                <span>俱有阿希平台应用的特色<br>资产跨连、易升级、低成本</span>
+                            </div>
+                            <div class="featurePage_item featurePage_item_down">
+                                <img src="static/img/featurePage_change.png" alt="">
+                                <b>示范型应用</b>
+                                <span>验证和证明阿希平台的能力同时<br>也是为了给阿希社区的开发者一个参考案例</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,6 +224,7 @@
                 <div class="teamPage_bg2"></div>
                 <div class="teamPage_footer">
                     <div class="teamPage_footer_arror"></div>
+                    <span><sub>「</sub>&nbsp;&nbsp;一个可信、自治、可扩展的去中心化预测平台&nbsp;&nbsp;<sup>」</sup></span>
                 </div>
             </div>
         </div>
