@@ -44,6 +44,17 @@ body{
     /* vertical-align: text-bottom; */
     /* display:  */
 }
+.header_list li{
+    transition: all ease .3s;
+}
+.header_list li:hover{
+    border-top: 4px solid rgb(84, 229, 200);
+}
+.header_list li:hover > a{
+    display: block;
+    margin-top: -4px;
+    color: rgb(84, 229, 200) !important;
+}
 .header_list_active{
     border-top: 4px solid rgb(84, 229, 200);
 }
@@ -234,6 +245,18 @@ body{
     transition: opacity .3s;
     pointer-events: none;
 }
+.featurePage_trigger{
+    position: absolute;
+    margin: auto;
+    z-index: 3;
+    width: 1040px;
+    height: 600px;
+    /* background: url('../img/featurePage_bg2.png') no-repeat; */
+    /* background-size: contain;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all .3s cubic-bezier(.25,.46,.45,.94); */
+}
 .featurePage_bg2{
     position: relative;
     margin: auto;
@@ -399,6 +422,9 @@ body{
     /* border: 1px solid rgb(133, 96, 170); */
     /* background-color: darksalmon; */
 }
+.applyPage_list_container > div{
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) .9s;
+}
 .applyPage_item{
     width: 355px;
     height: 400px;
@@ -434,94 +460,120 @@ body{
     /* height: 0px !important; */
     z-index: 7;
 }
-.applyPage_active .applyPage_item_content{
+/* .applyPage_active .applyPage_item_content{
     font-size: 15px;
     line-height: 30px;
-}
+} */
 .applyPage_l1_right{
-    height: 410px !important;
-    width: 365px !important;
-    margin-left: -130px;
+    /* height: 410px !important;
+    width: 365px !important; */
+    transform: scale(.9);
+    margin-left: -160px;
     z-index: 6;
 }
-.applyPage_l1_right .applyPage_item_content{
+/* .applyPage_l1_right .applyPage_item_content{
     font-size: 13px;
     line-height: 26px;
-}
+} */
 .applyPage_l2_right{
-    height: 380px !important;
-    width: 335px !important;
-    margin-left: -130px;
+    /* height: 380px !important;
+    width: 335px !important; */
+    transform: scale(.8);
+    margin-left: -190px;
     z-index: 5;
 }
-.applyPage_l2_right .applyPage_item_content{
+/* .applyPage_l2_right .applyPage_item_content{
     font-size: 12px;
     line-height: 24px;
-}
+} */
 .applyPage_l3_right{
-    height: 350px !important;
-    width: 305px !important;
-    margin-left: -130px;
+    /* height: 350px !important;
+    width: 305px !important; */
+    transform: scale(.7);
+    margin-left: -220px;
     z-index: 4;
 }
-.applyPage_l3_right .applyPage_item_content{
+/* .applyPage_l3_right .applyPage_item_content{
     font-size: 11px;
     line-height: 22px;
-}
+} */
 .applyPage_l4_right{
-    height: 320px !important;
-    width: 275px !important;
-    margin-left: -130px;
+    /* height: 320px !important;
+    width: 275px !important; */
+    transform: scale(.6);
+    margin-left: -250px;
     z-index: 3;
 }
+/* .applyPage_l4_right .applyPage_item_content{
+    font-size: 9px;
+    line-height: 18px;
+} */
 .applyPage_l5_right{
-    height: 290px !important;
-    width: 245px !important;
-    margin-left: -130px;
+    /* height: 290px !important;
+    width: 245px !important; */
+    transform: scale(.5);
+    margin-left: -280px;
     z-index: 2;
 }
+/* .applyPage_l5_right .applyPage_item_content{
+    font-size: 7px;
+    line-height: 14px;
+} */
 .applyPage_l1_left{
-    height: 410px !important;
-    width: 365px !important;
-    margin-right: -130px;
+    /* height: 410px !important;
+    width: 365px !important; */
+    transform: scale(.9);
+    margin-right: -160px;
     z-index: 6;
 }
-.applyPage_l1_left .applyPage_item_content{
+/* .applyPage_l1_left .applyPage_item_content{
     font-size: 13px;
     line-height: 25px;
-}
+} */
 .applyPage_l2_left{
-    height: 380px !important;
-    width: 335px !important;
-    margin-right: -130px;
+    /* height: 380px !important;
+    width: 335px !important; */
+    transform: scale(.8);
+    margin-right: -190px;
     z-index: 5;
 }
-.applyPage_l2_left .applyPage_item_content{
+/* .applyPage_l2_left .applyPage_item_content{
     font-size: 12px;
     line-height: 23px;
-}
+} */
 .applyPage_l3_left{
-    height: 350px !important;
-    width: 305px !important;
-    margin-right: -130px;
+    /* height: 350px !important;
+    width: 305px !important; */
+    transform: scale(.7);
+    margin-right: -220px;
     z-index: 4;
 }
-.applyPage_l3_left .applyPage_item_content{
+/* .applyPage_l3_left .applyPage_item_content{
     font-size: 11px;
     line-height: 22px;
-}
+} */
 .applyPage_l4_left{
-    height: 320px !important;
-    width: 275px !important;
-    margin-right: -130px;
+    /* height: 320px !important;
+    width: 275px !important; */
+    transform: scale(.6);
+    margin-right: -250px;
     z-index: 3;
 }
+/* .applyPage_l4_left .applyPage_item_content{
+    font-size: 9px;
+    line-height: 18px;
+} */
 .applyPage_l5_left{
-    height: 290px !important;
-    width: 245px !important;
-    margin-right: -130px;
+    /* height: 290px !important;
+    width: 245px !important; */
+    transform: scale(.5);
+    margin-right: -280px;
     z-index: 2;
 }
+/* .applyPage_l5_left .applyPage_item_content{
+    font-size: 7px;
+    line-height: 14px;
+} */
 #teamPage{
     background-color: rgb(248, 248, 250);
     position: relative;
@@ -583,6 +635,88 @@ body{
     left: 50%;
     margin-left: -384px;
     background: url('../img/teamPage_circle_bg.png') no-repeat;
+}
+.teamPage_info_container{
+}
+.teamPage_info_upper{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 130px;
+    display: flex;
+    align-content:center;
+    justify-content: space-between;
+    height: 150px;
+    width: 810px;
+    margin: auto;
+}
+.teamPage_ava_l1, .teamPage_ava_l2, .teamPage_ava_r1, .teamPage_ava_r2{
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.teamPage_ava_mid{
+    display: inline-block;
+    width: 130px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.teamPage_info_btnLeft{
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    line-height: 100%;
+    width: 38px;
+    background: url('../img/teamPage_btn.png') no-repeat center;
+    background-size: contain;
+}
+.teamPage_info_btnLeft:hover{
+    background: url('../img/teamPage_btn_active.png') no-repeat center;
+}
+.teamPage_info_btnRight:hover{
+    background: url('../img/teamPage_btn_active.png') no-repeat center;
+    transform: rotate(180deg);
+}
+.teamPage_info_btnRight{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    height: 100%;
+    line-height: 100%;
+    width: 38px;
+    transform: rotate(180deg);
+    background: url('../img/teamPage_btn.png') no-repeat center;
+    background-size: contain;
+}
+.teamPage_info_bottom{
+    height: 150px;
+    width: 870px;
+    margin: auto;
+}
+.teamPage_info_bottom h3{
+    display: block;
+    font-size: 24px;
+    text-align: center;
+}
+.teamPage_info_bottom b{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+.teamPage_info_bottom pre{
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 22px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
 }
 .teamPage_footer{
     position: absolute;
@@ -649,10 +783,17 @@ body{
     background: url('../img/adPage_arror.png') no-repeat center;
     cursor: pointer;
 }
-.adPage_lsit{
+.adPage_list{
     width: 285px;
     height: 150px;
     background: url('../img/adPage_bg.png') no-repeat;
+}
+.adPage_list_inner{
+    display: block;
+    width: 285px;
+    height: 150px;
+    background: url('../img/ad.png') no-repeat;
+    background-size: contain;
 }
 #footerPage{
     overflow: hidden;

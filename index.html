@@ -7,7 +7,9 @@
         <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
         <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
         <script src="https://cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
+        <script src="static/js/jquery.scrollTo.js"></script>
         <script src="static/js/index.js"></script>
+        <script src="static/js/data.js"></script>
         <link rel="stylesheet" type="text/css" href="static/css/reset.css">
         <link rel="stylesheet" type="text/css" href="static/css/index.css">
     </head>
@@ -17,20 +19,20 @@
                 <div class="header_logo">
                 </div>
                 <ul class="header_list">
-                    <li class="header_list_active"><a href="#mainPage">HOME</a></li>
-                    <li><a href="#featurePage">FEATURE</a></li>
-                    <li><a href="#visionPage">VISION</a></li>
-                    <li><a href="#applyPage">APPLY</a></li>
-                    <li><a href="#teamPage">TEAM</a></li>
-                    <li><a href="#footerPage">CONTACT</a></li>
+                    <li class="header_list_active"><a href="#mainPage">首页</a></li>
+                    <li><a href="#featurePage">特点</a></li>
+                    <li><a href="#visionPage">愿景</a></li>
+                    <li><a href="#applyPage">应用</a></li>
+                    <li><a href="#teamPage">团队</a></li>
+                    <li><a href="#footerPage">联系</a></li>
                 </ul>
                 <div class="interact">
                     <div class="download">
-                        <span>Download</span>
+                        <span>下载白皮书</span>
                     </div>
                     <div class="i18n_btn">
                         <span>
-                            <i>CN</i>
+                            <i>中文</i>
                             <img src="static/img/i18n_btn.png" alt="">
                         </span>
                     </div>
@@ -43,25 +45,25 @@
                 <div class="mainPage_content_layer1 disappear"></div>
                 <div class="mainPage_content_layer2 disappear"></div>
                 <div class="mainPage_content_layer3 disappear"></div>
-                <span>A TRUSTABLE PLATFROM</span>
+                <span>一个可信、自治、可扩展的去中心化预测平台</span>
             </div>
             <div class="mainPage_transitionBar">
                 <div class="mainPage_transitionBar_inner">
                     <div class="mainPage_transitionBar_spot1">
                         <img src="static/img/mainPage_transitionBar_1.png" alt="">
-                        <span>TRUSTABLE</span>
+                        <span>可信</span>
                     </div>
                     <div class="mainPage_transitionBar_spot2">
                             <img src="static/img/mainPage_transitionBar_2.png" alt="">
-                            <span>AUTONOMY</span>
+                            <span>自治</span>
                     </div>
                     <div class="mainPage_transitionBar_spot3">
                             <img src="static/img/mainPage_transitionBar_3.png" alt="">
-                            <span>EXTENTABLE</span>
+                            <span>可扩展</span>
                     </div>
                     <div class="mainPage_transitionBar_spot4">
                             <img src="static/img/mainPage_transitionBar_4.png" alt="">
-                            <span>DECENTRALLIZE</span>
+                            <span>去中心化</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +72,7 @@
             <div class="featurePage_upper">
                 <span class="featurePage_upper_title">
                     <img src="static/img/title_pic.png" alt="">
-                    <b>Feature Of Our Product</b>
+                    <b>产品特点</b>
                 </span>
                 <span class="featurePage_upper_detail">
                     A Trusted, autonomous and extensible decentralization prediction platfrom
@@ -79,6 +81,7 @@
             <div class="featurePage_bottom">
                 <div class="featurePage_bg1">
                     <!-- <div class="featurePage_shadow"></div> -->
+                    <div class="featurePage_trigger"></div>
                     <div class="featurePage_bg2">
                         <div class="featurePage_innerContain">
                             <div class="featurePage_item">
@@ -121,7 +124,7 @@
                 <div class="visionPage_content_upper">
                     <span class="visionPage_upper_title">
                         <img src="static/img/title_pic.png" alt="">
-                        <b>VISION</b>
+                        <b>愿景</b>
                     </span>
                     <span class="visionPage_upper_detail">
                         A Trusted, autonomous and extensible decentralization prediction platfrom
@@ -143,7 +146,7 @@
             <div class="applyPage_upper">
                 <span class="applyPage_upper_title">
                     <img src="static/img/title_pic.png" alt="">
-                    <b>Examples for apply</b>
+                    <b>应用场景</b>
                 </span>
                 <span class="applyPage_upper_detail">
                     A Trusted, autonomous and extensible decentralization prediction platfrom
@@ -214,7 +217,7 @@
                 <div class="teamPage_container_upper">
                     <span class="teamPage_upper_title">
                         <img src="static/img/title_pic.png" alt="">
-                        <b>Our Team</b>
+                        <b>我们的团队</b>
                     </span>
                     <span class="teamPage_upper_detail">
                         A Trusted, autonomous and extensible decentralization prediction platfrom
@@ -222,20 +225,36 @@
                 </div>
                 <div class="teamPage_bg1"></div>
                 <div class="teamPage_bg2"></div>
+                <div class="teamPage_info_container">
+                    <div class="teamPage_info_upper">
+                        <span class="teamPage_info_btnLeft"></span>
+                        <div class="teamPage_ava_l1"></div>
+                        <div class="teamPage_ava_l2"></div>
+                        <div class="teamPage_ava_mid"></div>
+                        <div class="teamPage_ava_r1"></div>
+                        <div class="teamPage_ava_r2"></div>
+                        <span class="teamPage_info_btnRight"></span>
+                    </div>
+                    <div class="teamPage_info_bottom">
+                        <h3></h3>
+                        <b></b>
+                        <pre></pre>
+                    </div>
+                </div>
                 <div class="teamPage_footer">
                     <div class="teamPage_footer_arror"></div>
-                    <span><sub>「</sub>&nbsp;&nbsp;一个可信、自治、可扩展的去中心化预测平台&nbsp;&nbsp;<sup>」</sup></span>
+                    <!-- <span><sub>「</sub>&nbsp;&nbsp;一个可信、自治、可扩展的去中心化预测平台&nbsp;&nbsp;<sup>」</sup></span> -->
                 </div>
             </div>
         </div>
         <div id="adPage">
             <div class="adPage_container">
-                <span class="adPage_arror_left"></span>
-                <div class="adPage_lsit"></div>
-                <div class="adPage_lsit"></div>
-                <div class="adPage_lsit"></div>
-                <div class="adPage_lsit"></div>
-                <span class="adPage_arror_right"></span>
+                <!-- <span class="adPage_arror_left"></span> -->
+                <div class="adPage_list"><span class="adPage_list_inner"></span></div>
+                <div class="adPage_list"><span class="adPage_list_inner"></span></div>
+                <div class="adPage_list"><span class="adPage_list_inner"></span></div>
+                <div class="adPage_list"><span class="adPage_list_inner"></span></div>
+                <!-- <span class="adPage_arror_right"></span> -->
             </div>
         </div>
         <div id="footerPage">
@@ -248,8 +267,8 @@
                     <a href="" class="footerPage_weibo"></a>
                 </span>
                 <div class="footerPage_btn">
-                    <span class="footerPage_download">Download</span>
-                    <span class="footerPage_contact">Contact</span>
+                    <span class="footerPage_download">下载白皮书</span>
+                    <span class="footerPage_contact">联系我们</span>
                 </div>
                 <div class="footerPage_icon"></div>
             </div>
