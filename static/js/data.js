@@ -79,7 +79,7 @@ $(document).ready(function(event, target){
             var tempNum = (baseNumber+5) - dataBase.length;
             var tempArr_1 = dataBase.slice(baseNumber, dataBase.length + 1);
             var tempArr_2 = dataBase.slice(0, tempNum);
-            console.log(baseNumber,tempNum, tempArr_1, tempArr_2);
+            // console.log(baseNumber,tempNum, tempArr_1, tempArr_2);
             return tempArr_1.concat(tempArr_2);
         } else {
             presetArr = dataBase.slice(baseNumber, baseNumber+5);
@@ -106,7 +106,7 @@ $(document).ready(function(event, target){
     }
     // render the page
     var render = function(){
-        console.log(presetArr);
+        // console.log(presetArr);
         $('.teamPage_info_bottom h3').text(presetArr[2].name);
         $('.teamPage_info_bottom b').text(presetArr[2].title);
         $('.teamPage_info_bottom pre').text(presetArr[2].desc);
@@ -117,6 +117,20 @@ $(document).ready(function(event, target){
         $('.teamPage_ava_mid').css('background-image', 'url(../static/img/'+presetArr[2].img+')');
         
     }
+    var changeTo = function(num){
+        var inc = baseNumber + (num -2);
+        if (inc < 0) {
+            baseNumber = dataBase.length - Math.abs(inc);
+        } else if (inc > dataBase.length) {
+            baseNumber = inc - dataBase.length;
+        } else {
+            baseNumber = baseNumber + (num -2);
+        }
+        // clearInterval();
+        getPreset();
+        presetArr = getPreset();
+        render();
+    }
     // monitor click action
     $('.teamPage_info_btnLeft').bind('click', function(){
         preOne();
@@ -124,5 +138,16 @@ $(document).ready(function(event, target){
     $('.teamPage_info_btnRight').bind('click', function(){
         nextOne();
     })
-    render();
+    setInterval(function(){
+        nextOne();
+    }, 3000)
+    $('.teamPage_info_upper div').each(function(index, value){
+        $(this).bind('click', function(){
+            console.log('clicked','index:',index,presetArr);
+            if (index == 2) {
+                return;
+            }
+            changeTo(index);
+        });
+    });
 })

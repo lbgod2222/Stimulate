@@ -108,7 +108,7 @@ body{
     height: 100vh;
     background-color: #fff;
     box-shadow: 0px 7px 13px rgb(201, 201, 201);
-    background: linear-gradient(to bottom, rgb(25,44,102), rgb(18, 110, 151));
+    background: linear-gradient(to bottom, rgb(26,43,100), rgb(18, 109, 151));
 }
 /* #mainPage::after{
     clear: both;
@@ -128,7 +128,7 @@ body{
     height: 100%;
     background: url('../img/mainPage_layer_2.png') no-repeat;
     background-size: contain;
-    transition: all ease .4s;
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) .6s;
 }
 .mainPage_content .mainPage_content_layer2{
     position: absolute;
@@ -138,7 +138,7 @@ body{
     height: 100%;
     background: url('../img/mainPage_layer_1.png') no-repeat;
     background-size: contain;
-    transition: all ease .4s;
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) .8s;
 }
 .mainPage_content .mainPage_content_layer3{
     position: absolute;
@@ -148,7 +148,7 @@ body{
     height: 100%;
     background: url('../img/mainPage_cloud.png') no-repeat 50% 32%;
     background-size: 20%;
-    transition: all ease .4s;
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) .9s;
     /* background-size: contain; */
 }
 .mainPage_content span{
@@ -377,6 +377,10 @@ body{
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
+    transition: all ease .3s;
+}
+.visionPage_leftbottom_btn:hover{
+    background-color: rgb(38, 175, 168);
 }
 #applyPage{
     width: 100%;
@@ -659,6 +663,7 @@ body{
 }
 .teamPage_ava_mid{
     display: inline-block;
+    transition: all ease .3s;
     width: 130px;
     height: 100%;
     background-repeat: no-repeat;
@@ -666,6 +671,7 @@ body{
     background-position: center;
 }
 .teamPage_info_btnLeft{
+    transition: all ease .3s;
     left: 0;
     position: absolute;
     cursor: pointer;
@@ -684,6 +690,7 @@ body{
     transform: rotate(180deg);
 }
 .teamPage_info_btnRight{
+    transition: all ease .3s;
     cursor: pointer;
     position: absolute;
     right: 0;
@@ -696,6 +703,7 @@ body{
     background-size: contain;
 }
 .teamPage_info_bottom{
+    transition: all ease .3s;
     height: 150px;
     width: 870px;
     margin: auto;
@@ -786,13 +794,13 @@ body{
 .adPage_list{
     width: 285px;
     height: 150px;
-    background: url('../img/adPage_bg.png') no-repeat;
+    background: url('../img/ad.png') no-repeat;
 }
 .adPage_list_inner{
     display: block;
     width: 285px;
     height: 150px;
-    background: url('../img/ad.png') no-repeat;
+    /* background: url('../img/ad.png') no-repeat; */
     background-size: contain;
 }
 #footerPage{
@@ -816,32 +824,52 @@ body{
     text-align: center;
     justify-content: space-around;
 }
+.footerPage_com a{
+   transition: all ease .3s; 
+}
 .footerPage_container a{
     display: inline-block;
-    width: 37px;
+    width: 39px;
     height: 37px;
     cursor: pointer;
 }
 .footerPage_wechat{
     background: url('../img/wechat.png') no-repeat center;
 }
+.footerPage_wechat:hover{
+    background: url('../img/wechat_hover.png') no-repeat center;
+}
 .footerPage_email{
     background: url('../img/email.png') no-repeat center;
+}
+.footerPage_email:hover{
+    background: url('../img/email_hover.png') no-repeat center;
 }
 .footerPage_github{
     background: url('../img/github.png') no-repeat center;
 }
+.footerPage_github:hover{
+    background: url('../img/github_hover.png') no-repeat center;
+}
 .footerPage_qicq{
     background: url('../img/qicq.png') no-repeat center;
 }
+.footerPage_qicq:hover{
+    background: url('../img/qicq_hover.png') no-repeat center;
+}
 .footerPage_weibo{
     background: url('../img/weibo.png') no-repeat center;
+}
+.footerPage_weibo:hover{
+    background: url('../img/weibo_hover.png') no-repeat center;
 }
 .footerPage_btn{
     margin-top: 65px;
     text-align: center;
 }
 .footerPage_btn span{
+    transition: all ease .3s;
+    cursor: pointer;
     display: inline-block;
     width: 170px;
     line-height: 45px;
@@ -849,6 +877,9 @@ body{
     height: 45px;
     border-radius: 24px;
     font-size: 24px;
+}
+.footerPage_btn span:hover{
+    background-color: rgb(38, 175, 168);
 }
 .footerPage_download{
     background-color: rgb(70, 223, 205);
@@ -866,6 +897,23 @@ body{
     height: 170px;
     background: url('../img/footerPage_icon.png') no-repeat center;
 }
+.backTop{
+    position: fixed;
+    width: 58px;
+    height: 58px;
+    /* border: 1px solid red; */
+    bottom: 200px;
+    right: 170px;
+    background: url('../img/backtop.png') no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: all ease .3s;
+    z-index: 9999;
+}
+.backTop:hover{
+    background: url('../img/backtop_hover.png') no-repeat;
+    background-size: contain;
+}
 
 @media screen and (max-width: 1400px) {
     .mainPage_content{
@@ -873,5 +921,9 @@ body{
         width: 548px;
         height: 485px;
         margin: 120px auto 0px;
+    }
+    .backTop{
+        bottom: 100px;
+        right: 70px;
     }
 }

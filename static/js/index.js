@@ -1,13 +1,6 @@
 // Main logic of KMW project
 //  params
 var isCountinue = true;
-// scroll status
-// var featurePageOffset = $('#featurePage');
-// var mainPageOffset = $('#mainPage').offset();
-// var visionPageOffset = $('#visionPage').offset();
-// var applyPageOffset = $('#applyPage').offset();
-// var teamPageOffset = $('#teamPage').offset();
-// var footerPageOffset = $('#footerPage').offset();
 
 $(document).ready(function(event, target){
     // params
@@ -17,8 +10,6 @@ $(document).ready(function(event, target){
     var applyPageOffset = $('#applyPage').offset().top;
     var teamPageOffset = $('#teamPage').offset().top;
     var footerPageOffset = $('#footerPage').offset().top;
-
-    console.log(featurePageOffset, mainPageOffset, visionPageOffset, applyPageOffset, footerPageOffset);
 
     // Scroll  headerbar color reflection
     //
@@ -38,6 +29,29 @@ $(document).ready(function(event, target){
                 $('#prime').removeClass('prime_scroll');
             }
         }
+    });
+    // backtop scroll monitor
+    //
+    //
+    $(window).scroll(function(event){
+        var backScroll = $(window).scrollTop();
+        if (backScroll > 1000) {
+            if ($('.backTop').hasClass('disappear')) {
+                $('.backTop').removeClass('disappear');
+            } else {
+                return;
+            }
+        } else {
+            if (!$('.backTop').hasClass('disappear')) {
+                return;
+            } else {
+                $('.backTop').addClass('disappear');
+            }
+        }
+    });
+    // backtop click monitor
+    $('.backTop').bind('click', function() {
+        $('body, html').animate({scrollTop:$('#mainPage').offset().top}, 1000);
     });
     // header list item change color depend on scrollheight
     $(window).scroll(function(e){
@@ -68,9 +82,6 @@ $(document).ready(function(event, target){
     //
     //
     $('.header_list li').bind('click', function(){
-        console.log($(this).find('a')[0].hash);
-        // console.log(featurePageOffset, mainPageOffset, visionPageOffset, applyPageOffset, footerPageOffset);
-        // $('body, html').animate({scrollTop:$(this).offset().top}, 800);
         $.scrollTo($(this).find('a')[0].hash, 300)
         var navList = $('.header_list li');
         $.each(navList, function(){
@@ -86,11 +97,11 @@ $(document).ready(function(event, target){
 
         layer1.removeClass('disappear');
         layer1.css('top', '0');
-        setTimeout(() => {
+        setTimeout(function(){
             layer2.removeClass('disappear');
             layer2.css('top', '0');
         }, 400);
-        setTimeout(() => {
+        setTimeout(function(){
             layer3.removeClass('disappear');
             layer3.css('top', '0');
         }, 800);
@@ -98,29 +109,27 @@ $(document).ready(function(event, target){
 
     // bind scroll action
     $(window).bind('mousewheel', function(event, delta, deltaX, deltaY) {
+        // event.preventDefault();
         // PREVENT TO DUMPLICATED FUNCTION 
         // PARAMS
         if (!isCountinue) {
+            event.preventDefault();
             return;
         }
-        console.log('ACTIvE MOUSEWHEEL');
         // scroll down, delta for -1,scroll up, delta for 1
         var mainPageScroll = $(window).scrollTop();
         var mainPageHeight = $('#mainPage').height();
         if (mainPageScroll < mainPageHeight - 10) {
-            console.log(deltaY);
             if (deltaY < 0 && isCountinue) {
                 isCountinue = false;
-                $('body, html').animate({scrollTop:$('#featurePage').offset().top}, 800);
-                setTimeout(() => {
+                $('body, html').animate({scrollTop:$('#featurePage').offset().top + 50}, 800);
+                setTimeout(function(){
                     isCountinue = true;
                 }, 800);
                 // $(window).scrollTop(mainPageHeight);
             }
         }
-        // console.log($('#mainPage').height());
         // scrollAction effect the page rolling
-        // var
     });
 
     // 3d movement
@@ -145,43 +154,28 @@ $(document).ready(function(event, target){
         var axis_y = $('.featurePage_trigger').height()/2;
         animX = (((off_x - axis_x) / axis_x) * 8) + 'deg';
         animY = (((axis_y - off_y) / axis_y) * 6.6) + 'deg';
-        console.log(animX, ',', animY);
         $('.featurePage_bg2').css("transform", "translateZ(20px)");
-        // console.log(container_z);
-        // $('.banner_3d').css(rotateX:''+animX, rotateY:''+animY);
         $('.featurePage_bg2').css("transform", "rotateX("+animY+") rotateY("+animX+")");
-        // $('.banner_3d_list').css("color","red");
-        // $('.banner_3d_list').css('rotateY', animY);
-        // shadow: input1 : +- 45(right shadow)  input2: +- 20(bottom shadow)
         shadowX = (((off_x - axis_x) / axis_x) * -45) + 'px';
         shadowY = (((axis_y - off_y) / axis_y) * 20) + 'px';
-        // $('.shadow').css("transform", "translate3d("+shadowX+","+shadowY+",0)");
     }
     var mouseOut = function() {
-        // $('.banner_3d_list').css("color","blue");
         $('.featurePage_bg2').css("transition", "all .3s ease-in-out");
-        setTimeout(() => {
+        setTimeout(function(){
             $('.featurePage_bg2').css("transform", "rotateX(0deg) rotateY(0deg)");
             $('.featurePage_bg2').css("transform", "translateZ(0px)");
-            // $('.shadow').css("transform", "translate3d(0,0,0)");
-            // $('.shadow').css("display", "none");
-            // $('.shadow').css("opacity", "0");
         }, 100);
     }
     var mouseIn = function() {
         $('.featurePage_bg2').css("transition", "transform 0.3s ease 0");
-        setTimeout(() => {
+        setTimeout(function(){
             $('.featurePage_bg2').css("transition", "transform 0s");
-            // $('.shadow').css("display", "block");
-            // $('.shadow').css("opacity", "1");
         }, 300);
     }
     // slide boxes
     //
     //
-    // $(document).ready(function(event, target){
     $(".applyPage_list_container>div").on('mouseenter', function(e){
-        //  console.log($(this).prev().prev());
         var leftNum = 1;
         var rightNum = 1;
         var leftAddClass = function(context) {
@@ -210,8 +204,6 @@ $(document).ready(function(event, target){
         $(this).addClass('applyPage_active');
         leftAddClass($(this));
         rightAddClass($(this));
-
-        console.log($(this).prev());
     })
     $(".applyPage_list_container").on('mouseout', function(e){
         e.stopPropagation();
@@ -222,7 +214,8 @@ $(document).ready(function(event, target){
         $(".applyPage_list_container>div:nth-child(5)").removeClass().addClass('applyPage_l1_right applyPage_item');
         $(".applyPage_list_container>div:nth-child(6)").removeClass().addClass('applyPage_l2_right applyPage_item');
     })
-    // });
     // immediately action area
-    mainPageAnim();
+    setTimeout(function(){
+        mainPageAnim();
+    }, 1500);
 });
