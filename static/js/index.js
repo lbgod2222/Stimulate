@@ -97,6 +97,8 @@ $(document).ready(function(event, target){
         var layer1 = $('.mainPage_content_layer2');
         var layer2 = $('.mainPage_content_layer1');
         var layer3 = $('.mainPage_content_layer3');
+        var layer5 = $('.mainPage_content_layer5');
+        var layer6 = $('.mainPage_content_layer6');
 
         layer1.removeClass('disappear');
         layer1.css('top', '0');
@@ -108,6 +110,15 @@ $(document).ready(function(event, target){
             layer3.removeClass('disappear');
             layer3.css('top', '0');
         }, 800);
+        setTimeout(function(){
+            layer6.removeClass('disappear');
+            layer6.css('top', '0');
+        }, 1500);
+        setTimeout(function(){
+            layer5.removeClass('disappear');
+            // layer5.css('top', '0');
+            layer5.css('opacity', '1');
+        }, 1900);
     }
 
     // bind scroll action
@@ -223,5 +234,5 @@ $(document).ready(function(event, target){
     // immediately action area
     setTimeout(function(){
         mainPageAnim();
-    }, 1500);
+    }, 1200);
 });
