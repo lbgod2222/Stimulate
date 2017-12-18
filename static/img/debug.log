@@ -41,3 +41,12 @@
 [1214/160821:INFO:CONSOLE(1216)] "[moon] load js complete, url num : 8, total mod count : 112, hit num: 0, use time : 111ms", source: http://mp.weixin.qq.com/s?__biz=MzI2ODM4NDA1OQ==&mid=2247484441&idx=1&sn=5876d97122ff71bef746d92622004b9c&chksm=eaf1264ddd86af5b6b2d1170f9c1b3e7f8fbd58e597b14426b3bfb8e0e53a2c707a7123f646c&mpshare=1&scene=23&srcid=1213wW08FpWpQwMVy6feX6Jr (1216)
 [1214/160916:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
 [1214/160932:ERROR:window_impl.cc(115)] Failed to unregister class Chrome_WidgetWin_0. Error = 1412
+[1215/180316:ERROR:renderer_main.cc(203)] Running without renderer sandbox
+[1215/180316:INFO:CONSOLE(72)] "Uncaught TypeError: Cannot read property 'firstChild' of null", source:  (72)
+[1215/180317:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[1215/180318:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[1215/180318:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 8294400
+[1215/180318:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[1215/180318:ERROR:child_discardable_shared_memory_manager.cc(266)] size: 4194304
+[1215/180319:ERROR:audio_low_latency_output_win.cc(181)] Bailing out due to non-perfect timing.  Buffer size of 480 is not an even divisor of 1056
+[1215/180338:ERROR:window_impl.cc(115)] Failed to unregister class Chrome_WidgetWin_0. Error = 1412

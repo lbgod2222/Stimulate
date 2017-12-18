@@ -10,6 +10,7 @@ $(document).ready(function(event, target){
     var applyPageOffset = $('#applyPage').offset().top;
     var teamPageOffset = $('#teamPage').offset().top;
     var footerPageOffset = $('#footerPage').offset().top;
+    var adPageOffset = $('#adPage').offset().top;
 
     // Scroll  headerbar color reflection
     //
@@ -36,17 +37,19 @@ $(document).ready(function(event, target){
     $(window).scroll(function(event){
         var backScroll = $(window).scrollTop();
         if (backScroll > 1000) {
-            if ($('.backTop').hasClass('disappear')) {
-                $('.backTop').removeClass('disappear');
-            } else {
-                return;
-            }
+            // if ($('.backTop').hasClass('disappear')) {
+            //     $('.backTop').removeClass('disappear');
+            // } else {
+            //     return;
+            // }
+            $('.backTop').show();
         } else {
-            if (!$('.backTop').hasClass('disappear')) {
-                return;
-            } else {
-                $('.backTop').addClass('disappear');
-            }
+            // if (!$('.backTop').hasClass('disappear')) {
+            //     return;
+            // } else {
+            //     $('.backTop').addClass('disappear');
+            // }
+            $('.backTop').hide();
         }
     });
     // backtop click monitor
@@ -69,10 +72,10 @@ $(document).ready(function(event, target){
         if (headerScroll >= applyPageOffset && headerScroll<teamPageOffset) {
             $('.header_list li:nth-child(4)').addClass('header_list_active');
         }
-        if (headerScroll >= teamPageOffset && headerScroll<footerPageOffset) {
+        if (headerScroll >= teamPageOffset && headerScroll<adPageOffset - 245) {
             $('.header_list li:nth-child(5)').addClass('header_list_active');
         }
-        if (headerScroll >= footerPageOffset) {
+        if (headerScroll >= adPageOffset-245) {
             $('.header_list li:nth-child(6)').addClass('header_list_active');
         } else if (headerScroll<featurePageOffset) {
             $('.header_list li:nth-child(1)').addClass('header_list_active');
@@ -175,7 +178,7 @@ $(document).ready(function(event, target){
     // slide boxes
     //
     //
-    $(".applyPage_list_container>div").on('mouseenter', function(e){
+    $(".applyPage_list_container>div").on('mouseover', function(e){
         var leftNum = 1;
         var rightNum = 1;
         var leftAddClass = function(context) {
@@ -200,10 +203,13 @@ $(document).ready(function(event, target){
                 return;
             }
         }
-        $(this).removeClass('applyPage_l1_left applyPage_l2_left applyPage_l3_left applyPage_l4_left applyPage_l5_left applyPage_l6_left applyPage_l1_right applyPage_l2_right applyPage_l3_right applyPage_l4_right applyPage_l5_right applyPage_l6_right applyPage_active');
-        $(this).addClass('applyPage_active');
-        leftAddClass($(this));
-        rightAddClass($(this));
+        // let featureTrigger = setTimeout(() => {
+            // console.log('HI timer is on');
+            $(this).removeClass('applyPage_l1_left applyPage_l2_left applyPage_l3_left applyPage_l4_left applyPage_l5_left applyPage_l6_left applyPage_l1_right applyPage_l2_right applyPage_l3_right applyPage_l4_right applyPage_l5_right applyPage_l6_right applyPage_active');
+            $(this).addClass('applyPage_active');
+            leftAddClass($(this));
+            rightAddClass($(this));
+        // }, 500);
     })
     $(".applyPage_list_container").on('mouseout', function(e){
         e.stopPropagation();
