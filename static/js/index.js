@@ -231,6 +231,23 @@ $(document).ready(function(event, target){
         $(".applyPage_list_container>div:nth-child(5)").removeClass().addClass('applyPage_l1_right applyPage_item');
         $(".applyPage_list_container>div:nth-child(6)").removeClass().addClass('applyPage_l2_right applyPage_item');
     })
+    // footer-hover anima
+    //
+    //
+    $('.footerPage_wechat').bind('mouseover', function(){
+        $('.footerPage_wechat_float').removeClass('disappear');
+    });
+    $('.footerPage_wechat').bind('mouseout', function(){
+        $('.footerPage_wechat_float').addClass('disappear');
+    });
+    $('.footerPage_qicq').bind('mouseover', function(e){
+        e.stopPropagation();
+        $('.footerPage_qicq_float').removeClass('disappear');
+    });
+    $('.footerPage_qicq').bind('mouseout', function(e){
+        e.stopPropagation();
+        $('.footerPage_qicq_float').addClass('disappear');
+    });
     // immediately action area
     setTimeout(function(){
         mainPageAnim();

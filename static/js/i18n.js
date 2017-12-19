@@ -2,7 +2,7 @@ $(function(){
 	loadProperties('strings');
 });
 
-var flag = 0;
+window.flag = 0;
 
 function loadProperties(str){
 	jQuery.i18n.properties({//加载资浏览器语言对应的资源文件
@@ -61,15 +61,15 @@ function loadProperties(str){
 	});
 }
 function CHANGEL(){
-	if (flag === 0) {
-		loadProperties('strings')
+	if (window.flag === 0) {
+		loadProperties('strings_en')
 		$('.i18n_btn i').css('right', '7px');
 		$('.i18n_btn img').css('left', '-4px');
-		flag = 1;
+		window.flag = 1;
 	} else {
-		loadProperties('strings_en')
+		loadProperties('strings')
 		$('.i18n_btn i').css('right', '30px');
 		$('.i18n_btn img').css('left', '34px');
-		flag = 0;
+		window.flag = 0;
 	}
 }

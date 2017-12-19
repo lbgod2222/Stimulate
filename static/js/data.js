@@ -3,13 +3,18 @@ var current = 0;
 dataBase = [
     {
         name:'许清',
+        name_e:'Xv Qing',
         desc:`国内早期区块链项目布道者和投资者，深耕于科技服务领域的连续创业者；科技项目投资人，主要关注区块链、人工智能、
         医疗科技等领域的早期项目，力推区块链技术与各行业应用的融合。`,
+        desc_e:`And Then There Were None is a detective fiction novel by Agatha Christie. In the novel, ten people, 
+        who have previously been complicit in the deaths of others but have escaped notice or punishment, are tricked
+        into coming onto an island.`,
         title:'合伙人、战略咨询顾问',
         img: 'xvqing.png'
     },
     {
         name:'田少杰',
+        name_e:'Shaojie Tian',
         desc:`区块链技术爱好者和区块链早期项目投资者，致力于跨链技术的研究、推动区块链技术与行业应用的跨界融合；科技领域天使投资人，
         主要关注区块链、人工智能、医疗科技等领域的中早期项目。`,
         title:'合伙人、战略咨询顾问',
@@ -17,6 +22,7 @@ dataBase = [
     },
     {
         name:'郭海明',
+        name_e:'Haiming Guo',
         desc:`美国马里兰大学应用数学博士，在大数据分析建模、金融风险管理、金融科技领域有十五年以上的丰富经验。
         曾为多家银行及互联网金融公司提供大数据分析咨询服务，并在多家互联网金融公司担任首席数据官。
         对互联网金融及金融科技行业有深度的了解。`,
@@ -25,13 +31,16 @@ dataBase = [
     },
     {
         name:'王向',
+        name_e:'Xiang wang',
         desc:`具有超过15年的软件设计开发经验，专注于身份认证、数据加密、和区块链技术，以及在金融领域的应用；
         曾经在中国参与创办并运营两家企业，深度了解中国市场并具有丰富的商务经验；目前致力于帮助区块链团队构建优质社区。`,
+        desc_e:`Xiang Wang has over 15 years of experience with software design and development in Silicon Valley, specializing in FinTech, authentication, data encryption and blockchain technologies. He founded and operated two startup companies and has extensive knowledge and business experience both in China and USA. With rich experience in ICO and DAPP operation, he has deep understanding of blockchain ecosystem and DAPP. Currently he is dedicated to advising and helping top blockchain teams to develop global strategy and to build thriving oversea communities.`,
         title:'运营合伙人、战略咨询顾问',
         img: 'wangxiang.png'
     },
     {
         name:'张德涛',
+        name_e:'Detao Zhang',
         desc:`区块链爱好者和国内早期区块链项目投资者、连续创业者，拥有丰富的项目运营和推广经验，
         致力于区块链技术在各行业的应用推广；科技项目投资人，主要关注区块链、人工智能、光电等领域的早期项目。`,
         title:'首席运营官COO',
@@ -39,6 +48,7 @@ dataBase = [
     },
     {
         name:'威利.维申',
+        name_e:'Willi Vision',
         desc:`Willi Vision拥有超过三十五年（娱乐、科技、房地产、生物科技、保险和银行等公司）融资的丰富经验。
         曾经为科技公司（1.38亿美元），娱乐企业（1.22亿美元）和数十部电影（2.12亿美元）筹集了大量的资金。
         Willi Vision拥有加州大学洛杉矶分校UCLA商业经济学学士学位、波士顿大学MBA学位和旧金山州立大学硕士学位。`,
@@ -47,6 +57,7 @@ dataBase = [
     },
     {
         name:'迈特.哈蒙德',
+        name_e:'Matt Hammond',
         desc:`Matt Hammond是MediaLabPro的创始人和CEO，毕业于加州大学伯克利分校（UC Berkley）；
         业界知名的网络营销专家和用户界面设计师，拥有十多年开发网站和在线营销策略的经验；
         曾参与推广众多曾被媒体广泛报道的产品，媒体包括《纽约时报》、《商业周刊》、《个人电脑》、
@@ -56,6 +67,7 @@ dataBase = [
     },
     {
         name:'萨沙.博德斯基',
+        name_e:'Sasha Brodsky',
         desc:`Sasha Brodsky律师在商业法、房地产、商业合同和诉讼等领域有20年丰富经验，
         同时在娱乐业、版权、商标法等领域也多有建树。`,
         title:'',
@@ -100,9 +112,15 @@ $(document).ready(function(event, target){
     // render the page
     var render = function(){
         // console.log(presetArr);
-        $('.teamPage_info_bottom h3').text(presetArr[2].name);
-        $('.teamPage_info_bottom b').text(presetArr[2].title);
-        $('.teamPage_info_bottom pre').text(presetArr[2].desc);
+        if (window.flag === 0) {
+            $('.teamPage_info_bottom h3').text(presetArr[2].name);
+            $('.teamPage_info_bottom b').text(presetArr[2].title);
+            $('.teamPage_info_bottom p').text(presetArr[2].desc);
+        } else {
+            $('.teamPage_info_bottom h3').text(presetArr[2].name_e);
+            $('.teamPage_info_bottom b').text(presetArr[2].title_e);
+            $('.teamPage_info_bottom p').text(presetArr[2].desc_e);
+        }
         $('.teamPage_ava_l1').css('background-image', 'url(../static/img/'+presetArr[0].img+')');
         $('.teamPage_ava_l2').css('background-image', 'url(../static/img/'+presetArr[1].img+')');
         $('.teamPage_ava_r1').css('background-image', 'url(../static/img/'+presetArr[3].img+')');
