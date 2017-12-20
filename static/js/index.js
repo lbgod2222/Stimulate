@@ -237,6 +237,9 @@ $(document).ready(function(event, target){
     $('.footerPage_wechat').bind('mouseover', function(){
         $('.footerPage_wechat_float').removeClass('disappear');
     });
+    $('.footerPage_wechat').bind('click', function(e){
+        e.preventDefault();
+    });
     $('.footerPage_wechat').bind('mouseout', function(){
         $('.footerPage_wechat_float').addClass('disappear');
     });
@@ -244,10 +247,38 @@ $(document).ready(function(event, target){
         e.stopPropagation();
         $('.footerPage_qicq_float').removeClass('disappear');
     });
+    $('.footerPage_qicq').bind('click', function(e){
+        e.preventDefault();
+    });
     $('.footerPage_qicq').bind('mouseout', function(e){
         e.stopPropagation();
         $('.footerPage_qicq_float').addClass('disappear');
     });
+    // un open market link
+    //
+    //
+    $('.footerPage_contact').bind('mouseover', function(e) {
+        if (window.flag === 0) {
+            $(this).html('尚未开放');
+        }
+        if (window.flag === 1) {
+            $(this).html('ComingSoon');
+        }
+    });
+    $('.footerPage_contact').bind('mouseout', function(e) {
+        if (window.flag === 0) {
+            $(this).html('进入市场');
+        }
+        if (window.flag === 1) {
+            $(this).html('To markets');
+        }
+    });
+    // disable adPage links
+    //
+    //
+    $('.adPage_list_3 a, .adPage_list_4 a, .adPage_list_5 a').bind('click', function(e) {
+        e.preventDefault();
+    })
     // immediately action area
     setTimeout(function(){
         mainPageAnim();

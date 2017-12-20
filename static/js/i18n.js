@@ -41,6 +41,7 @@ function loadProperties(str){
 			$('#vision_content').html($.i18n.prop('vision_content'));
 			$('#vision_download').html($.i18n.prop('vision_download'));
 			// applyPage
+			$('#apply_title').html($.i18n.prop('apply_title'));
 			$('#apply_sub1_title').html($.i18n.prop('apply_sub1_title'));
 			$('#apply_sub1_content').html($.i18n.prop('apply_sub1_content'));
 			$('#apply_sub2_title').html($.i18n.prop('apply_sub2_title'));
@@ -55,8 +56,9 @@ function loadProperties(str){
 			$('#apply_sub6_content').html($.i18n.prop('apply_sub6_content'));
 			// teamPage
 			$('#team_title').html($.i18n.prop('team_title'));
-
-
+			// footerPage
+			$('#footerPage_download').html($.i18n.prop('footer_download'));
+			$('#footerPage_contact').html($.i18n.prop('footer_contact'));
 		}
 	});
 }
@@ -65,11 +67,15 @@ function CHANGEL(){
 		loadProperties('strings_en')
 		$('.i18n_btn i').css('right', '7px');
 		$('.i18n_btn img').css('left', '-4px');
+		$('.mainPage_content_layer5').addClass('mainPage_e');
+		$('.teamPage_footer').addClass('teamPage_e');
 		window.flag = 1;
 	} else {
 		loadProperties('strings')
 		$('.i18n_btn i').css('right', '30px');
 		$('.i18n_btn img').css('left', '34px');
+		$('.mainPage_content_layer5').removeClass('mainPage_e');
+		$('.teamPage_footer').removeClass('teamPage_e');
 		window.flag = 0;
 	}
 }
